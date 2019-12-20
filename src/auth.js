@@ -1,10 +1,16 @@
-const fetch = require('node-fetch');
-const qs = require('querystring');
-const WebSocket = require('ws');
+// const fetch = require('node-fetch');
+// const qs = require('querystring');
+// const WebSocket = require('ws');
 
-const fs = require('fs');
+// const fs = require('fs');
 
-const fetchToken = async () => {
+import fetch from 'node-fetch';
+import qs from 'querystring';
+import WebSocket from 'ws';
+
+import fs from 'fs';
+
+export const fetchToken = async () => {
   const keys = JSON.parse(fs.readFileSync('./config/keys.json', 'utf8'));
   keys.api = "https://api.picarto.tv/v1";
   
@@ -37,12 +43,7 @@ const fetchToken = async () => {
   return await req.text();
 }
 
-const connectToWebSocket = async (token) => {
+export const connectToWebSocket = async (token) => {
   const ws = new WebSocket("wss://nd2.picarto.tv/socket?token=" + token);
   return ws;
-}
-
-module.exports = {
-  fetchToken,
-  connectToWebSocket
 }

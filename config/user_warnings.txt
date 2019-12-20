@@ -3,4 +3,11 @@
 ===============
 = tolerence: -1
 ===============
-{}
+{
+  "whygena": {
+    "test_warning": 1
+  },
+  "Whygena": {
+    "test_warning": 1
+  }
+}

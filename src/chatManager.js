@@ -1,6 +1,11 @@
-const EventEmitter = require("events").EventEmitter;
-const pb = require("protobufjs");
-const msgTypes = require('./picartoMessageTypes');
+// const EventEmitter = require("events").EventEmitter;
+// const pb = require("protobufjs");
+// const msgTypes = require('./picartoMessageTypes');
+
+import { EventEmitter } from 'events';
+// import * as pb from 'protobufjs';
+import msgTypes from './picartoMessageTypes'; 
+const pb = require("protobufjs")
 
 class picartoChatManager extends EventEmitter {
 
@@ -28,7 +33,7 @@ class picartoChatManager extends EventEmitter {
       this.emit(msgTypes[msg[0]], msgType.decode(msg.slice(1)));
     }
 
-    this.root = await pb.load(`${__dirname}/picartoChat.proto`).then();
+    this.root = await pb.load(`./config/picartoChat.proto`).then();
     this.chat.on("message", (msg) => messageHandler(msg, this.root)); 
   }
 
@@ -70,4 +75,4 @@ class picartoChatManager extends EventEmitter {
   }
 }
 
-module.exports = picartoChatManager;
+export default picartoChatManager;

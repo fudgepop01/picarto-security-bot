@@ -1,6 +1,6 @@
 {
-  "username": "picarto username goes here",
+  "username": "username goes here",
   "notifyOwner": true,
-  "token": "picarto api token goes here",
+  "token": "key goes here",
   "api": "https://api.picarto.tv/v1"
 }

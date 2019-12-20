@@ -1,7 +1,12 @@
-const { fetchToken, connectToWebSocket } = require(`${__dirname}/auth`);
-const PicartoChatManager = require('./chatManager');
-const fs = require('fs');
-const EOL = require('os').EOL;
+// const { fetchToken, connectToWebSocket } = require('./auth');
+// const PicartoChatManager = require('./chatManager');
+// const fs = require('fs');
+// const EOL = require('os').EOL;
+
+import { fetchToken, connectToWebSocket } from './auth';
+import PicartoChatManager from './chatManager';
+import fs from 'fs';
+import { EOL } from 'os';
 
 
 const notifyOwner = JSON.parse(fs.readFileSync('./config/keys.json', 'utf8')).notifyOwner;
