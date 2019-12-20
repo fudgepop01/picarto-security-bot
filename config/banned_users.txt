@@ -1,0 +1,1 @@
+# banned users' usernames should go in this file

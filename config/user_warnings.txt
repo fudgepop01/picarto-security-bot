@@ -1,0 +1,6 @@
+# the amount of warnings given per-word before outright banning the offending user
+# set tolerence to -1 to never ban users for warnings
+===============
+= tolerence: -1
+===============
+{}

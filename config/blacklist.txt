@@ -1,0 +1,31 @@
+# leave comments like this
+# also supports regex for advanced matching (more info: regex101.com)
+
+
+##################
+# warnings: 
+#   deletes the offending message and issues a warning to the user.
+#   Also increments the user's warn counter by 1
+================== 
+= WARNING
+==================
+
+
+##################
+# ban:
+#   will immediately ban a user regardless of warnings.
+================== 
+= BAN
+==================
+
+
+
+##################
+# shadowbans:
+#   CONFIGURE WITH EXTREME CAUTION;
+#   will IMMEDIATELY shadowban the user regardless of warnings
+#   recommended to counteract doxxing
+================== 
+= SHADOWBAN
+==================
+
