@@ -63,14 +63,14 @@ const handleWarn = (msg, word, whisper, banFn) => {
 
   let i;
   for (const [idx, line] of lines.entries()) {
-    if (line.startsWith('= tolerence:')) {
+    if (line.startsWith('= tolerance:')) {
       i = idx;
       break;
     }
   }
 
   console.log(lines);
-  let tolerence = parseInt(lines[i].substring(lines[i].indexOf(':') + 1));
+  let tolerance = parseInt(lines[i].substring(lines[i].indexOf(':') + 1));
   i++;
   
   let header = [];
@@ -88,14 +88,14 @@ const handleWarn = (msg, word, whisper, banFn) => {
   }
   data[msg.displayName][word]++;
 
-  if (tolerence !== -1 && data[msg.displayName][word] > tolerence) {
-    handleBan(msg.displayName, banFn, {newBan: true, reason: `used the word/phrase "${word}" more than ${tolerence} times`});
+  if (tolerance !== -1 && data[msg.displayName][word] > tolerance) {
+    handleBan(msg.displayName, banFn, {newBan: true, reason: `used the word/phrase "${word}" more than ${tolerance} times`});
   } else {
-    if (tolerence === -1) whisper(msg.displayName, `your message was deleted for the use of ${word}"`);
+    if (tolerance === -1) whisper(msg.displayName, `your message was deleted for the use of ${word}"`);
     else {
       whisper(
         msg.displayName, 
-        `warning: your message was deleted for the use of: "${word}"; warnings left for this word before ban: ${tolerence - data[msg.displayName][word]}`
+        `warning: your message was deleted for the use of: "${word}"; warnings left for this word before ban: ${tolerance - data[msg.displayName][word]}`
       )
     }
   }
