@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "bufferutil": "^4.0.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "protobufjs": "^6.8.8",
     "querystring": "^0.2.0",
     "utf-8-validate": "^5.0.2",
